@@ -1,0 +1,24 @@
+﻿@model LoginModel
+
+
+
+<form asp-action="Login" method="post">
+    <h2>Login</h2>
+    <p>
+        <label asp-for="Email" class="floatLabel"></label>
+        <input id="Email" asp-for="Email" type="text">
+        <span asp-validation-for="Email" class="text-danger">  </span>
+    </p>
+    <p>
+        <label asp-for="Password" class="floatLabel"></label>
+        <input id="password" asp-for="Password" type="password">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </p>
+    <p>
+        <input type="submit" value="Login" id="">
+    </p>
+    <p>
+        <a asp-controller="Account"
+           asp-action="Register" class="p-3">Dont have an account then just open one</a>
+    </p>
+</form>

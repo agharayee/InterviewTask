@@ -1,0 +1,42 @@
+﻿@model RegisterModel
+
+<form asp-action="Login" method="post">
+    <h2>Sign Up</h2>
+    <p>
+        <label asp-for="FirstName" class="floatLabel"></label>
+        <input id="Email" asp-for="FirstName" type="text">
+        <span asp-validation-for="FirstName" class="text-danger">  </span>
+    </p>
+    <p>
+        <label asp-for="LastName" class="floatLabel"></label>
+        <input id="password" asp-for="LastName" type="text">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label asp-for="Email" class="floatLabel"></label>
+        <input id="password" asp-for="Email" type="text">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label asp-for="Password" class="floatLabel"></label>
+        <input id="password" asp-for="Password" type="password">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label asp-for="ComfirmPassword" class="floatLabel"></label>
+        <input id="password" asp-for="ComfirmPassword" type="password">
+        <span asp-validation-for="ComfirmPassword" class="text-danger"></span>
+    </p>
+    <p>
+        <input type="submit" value="Create My Account" id="">
+    </p>
+
+    <p>
+        <a asp-controller="Account"
+           asp-action="Login">Already have an account then sign in</a>
+    </p>
+   
+</form>
