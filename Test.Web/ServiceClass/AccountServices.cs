@@ -27,9 +27,12 @@ namespace Test.Web.ServiceClass
             }
             var user = new ApplicationUser
             {
+                UserName = model.Email,
                 Email = model.Email,
                 FirstName = model.FirstName,
-                LastName = model.LastName
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
+                ContactAddress = model.ContactAddress
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)

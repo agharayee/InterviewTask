@@ -34,7 +34,8 @@ namespace Test.Web.Controllers
             return LocalRedirect("~/");
         }
 
-       //Get Request to handle Login Process
+       //OIST Request to handle Login Process
+       [HttpPost]
         public async Task<ActionResult> Login(LoginModel model)
         {
             if(!ModelState.IsValid)

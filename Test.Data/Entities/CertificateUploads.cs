@@ -13,5 +13,6 @@ namespace Test.Data.Entities
         public byte[] BscCertFileName { get; set; }
         public string WaecCertFileType { get; set; }
         public byte[] WaecCertFileName { get; set; }
+        public virtual ApplicationUser users { get; set; }
     }
 }

@@ -1,7 +1,8 @@
 ﻿@model RegisterModel
 
-<form asp-action="Login" method="post">
+<form asp-action="Register" method="post">
     <h2>Sign Up</h2>
+    <div asp-validation-summary="All" class="text-danger"></div>
     <p>
         <label asp-for="FirstName" class="floatLabel"></label>
         <input id="Email" asp-for="FirstName" type="text">
@@ -18,6 +19,19 @@
         <input id="password" asp-for="Email" type="text">
         <span asp-validation-for="Email" class="text-danger"></span>
     </p>
+
+    <p>
+        <label asp-for="ContactAddress" class="floatLabel"></label>
+        <input id="Email" asp-for="ContactAddress" type="text">
+        <span asp-validation-for="ContactAddress" class="text-danger">  </span>
+    </p>
+    <p>
+        <label asp-for="PhoneNumber" class="floatLabel"></label>
+        <input id="PhoneNumner" asp-for="LastName" type="text">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </p>
+
+    
 
     <p>
         <label asp-for="Password" class="floatLabel"></label>
@@ -38,5 +52,5 @@
         <a asp-controller="Account"
            asp-action="Login">Already have an account then sign in</a>
     </p>
-   
+
 </form>

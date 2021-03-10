@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using Test.Data.Entities;
 
-namespace Test.Data.Entities
+namespace Test.Web.Models
 {
-    public class PersonalDetails
+    public class AddPersonnalDetailsViewModel
     {
         public int Id { get; set; }
         public string CVFileName { get; set; }

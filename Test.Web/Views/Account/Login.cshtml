@@ -2,8 +2,11 @@
 
 
 
-<form asp-action="Login" method="post">
+<form asp-controller="Account" asp-action="Login" method="post">
     <h2>Login</h2>
+   
+        <div asp-validation-summary="All" class="text-danger"></div>
+  
     <p>
         <label asp-for="Email" class="floatLabel"></label>
         <input id="Email" asp-for="Email" type="text">

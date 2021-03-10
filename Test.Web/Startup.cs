@@ -39,7 +39,8 @@ namespace Test.Web
             }));
             services.AddIdentity<ApplicationUser, IdentityRole>()
                .AddEntityFrameworkStores<AuthenticationDbContext>().AddDefaultTokenProviders();
-            services.AddScoped<IAccountService, AccountServices>();
+            //services.Transient<IAccountService, AccountServices>();
+            
             services.AddControllersWithViews();
             services.Configure<IdentityOptions>(options =>
                {
@@ -52,6 +53,7 @@ namespace Test.Web
                    options.SignIn.RequireConfirmedAccount = false;
                    options.SignIn.RequireConfirmedPhoneNumber = false;
                });
+            services.AddTransient<IAccountService, AccountServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +74,7 @@ namespace Test.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

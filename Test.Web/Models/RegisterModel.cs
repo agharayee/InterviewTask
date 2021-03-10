@@ -19,6 +19,10 @@ namespace Test.Web.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        public string ContactAddress { get; set; }
+        public string EmailAddress { get; set; }
+        public string PhoneNumber { get; set; }
+
         [Display(Name = "Password")]
         [Required]
         [DataType(DataType.Password)]
