@@ -14,5 +14,6 @@ namespace Test.Data
         }
         public DbSet<CertificateUploads> certificateUploads { get; set; }
         public DbSet<PersonalDetails> personalDetails { get; set; }
+        public DbSet<Questions> questions { get; set; }
     }
 }

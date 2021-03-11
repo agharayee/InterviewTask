@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Test.Data;
 
 namespace Test.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210311013054_questionsDbAdded")]
+    partial class questionsDbAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,44 +146,6 @@ namespace Test.Data.Migrations
                     b.ToTable("personalDetails");
                 });
 
-            modelBuilder.Entity("Test.Data.Entities.Questions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Answer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Option1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Option2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Option3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Option4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Question")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Results")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("questions");
-                });
-
             modelBuilder.Entity("Test.Data.Entities.CertificateUploads", b =>
                 {
                     b.HasOne("Test.Data.Entities.ApplicationUser", "users")
@@ -198,15 +162,6 @@ namespace Test.Data.Migrations
                         .HasForeignKey("usersId");
 
                     b.Navigation("users");
-                });
-
-            modelBuilder.Entity("Test.Data.Entities.Questions", b =>
-                {
-                    b.HasOne("Test.Data.Entities.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
